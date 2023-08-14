@@ -25,6 +25,7 @@ pipeline {
         stage('Build Docker Image'){
             steps {
                 sh 'whoami'
+                sh 'sudo usermod -a -G docker jenkins'
                 sh 'docker build -t myimage .'
             }
         }
