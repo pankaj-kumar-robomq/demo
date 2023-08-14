@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
-                sh 'sudo -p Pankaj@9470 usermod -a -G docker jenkins'
+                sh 'sudo -pPankaj@9470 usermod -a -G docker jenkins'
                 sh 'docker build -t myimage .'
             }
         }
