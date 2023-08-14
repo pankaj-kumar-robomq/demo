@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
+                sh 'whoami'
                 sh 'docker build -t myimage .'
             }
         }
