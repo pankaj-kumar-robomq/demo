@@ -16,17 +16,11 @@ pipeline {
                 '''
             }
         }
-        stage('Test'){
-            steps{
-                echo 'testing'
-            }
-        }
-        stage('Hello') {
+        stage('Script') {
             steps {
                 sh 'chmod +x script.sh'
                 sh './script.sh $FIRSTNAME $LASTNAME > welcome.txt'
             }
         }
-        
     }
 }
