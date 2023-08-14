@@ -1,0 +1,4 @@
+FIRSTNAME = $1
+LASTNAME = $2
+
+echo "welcome $FIRSTNAME $LASTNAME"
