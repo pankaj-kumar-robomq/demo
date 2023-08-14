@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Hello') {
             steps {
-                sh 'chmode +x script.sh'
+                sh 'chmod +x script.sh'
                 sh './script.sh $FIRSTNAME $LASTNAME'
             }
         }
