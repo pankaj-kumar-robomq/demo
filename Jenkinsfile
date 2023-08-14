@@ -22,5 +22,10 @@ pipeline {
                 sh './script.sh $FIRSTNAME $LASTNAME > welcome.txt'
             }
         }
+        stage('Build Docker Image'){
+            steps {
+                sh 'docker build -t myimage .'
+            }
+        }
     }
 }
