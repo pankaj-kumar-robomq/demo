@@ -4,6 +4,7 @@ pipeline {
     environment {
         FIRSTNAME = "Pankaj"
         LASTNAME = "Kumar"
+        WHOAMI = sh 'whoami'
     }
     
     stages {
@@ -24,8 +25,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
-                sh 'whoami'
-                sh 'sudo usermod -a -G docker jenkins'
+                sh 'sudo usermod -a -G docker $WHOAMI'
                 sh 'docker build -t myimage .'
             }
         }
