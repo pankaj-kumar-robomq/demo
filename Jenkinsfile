@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        FIRSTNAME = "Pankaj"
+        LASTNAME = "Kumar"
+    }
+    
     stages {
         stage('Build'){
             steps{
@@ -18,7 +23,8 @@ pipeline {
         }
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                sh 'chmode +x script.sh'
+                sh './script.sh'
             }
         }
         
