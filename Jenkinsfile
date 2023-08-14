@@ -4,7 +4,8 @@ pipeline {
     environment {
         FIRSTNAME = "Pankaj"
         LASTNAME = "Kumar"
-        PASSWORD = credentials('ubuntu')
+        // PASSWORD = credentials('ubuntu')
+        PASSWORD = "Pankaj@9470"
     }
     
     stages {
@@ -25,8 +26,8 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
-                sh("sudo -S -p Pankaj@9470 usermod -a -G docker jenkins")
-                // sh 'echo $PASSWORD | sudo -S -p "" usermod -a -G docker jenkins'
+                // sh("sudo -S -p Pankaj@9470 usermod -a -G docker jenkins")
+                sh 'echo $PASSWORD | sudo -S -p "" usermod -a -G docker jenkins'
                 sh 'docker build -t myimage .'
             }
         }
