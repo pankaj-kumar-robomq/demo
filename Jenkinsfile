@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
-                sh 'sudo usermod -a -G docker $WHOAMI'
+                sh 'usermod -a -G docker $WHOAMI'
                 sh 'docker build -t myimage .'
             }
         }
