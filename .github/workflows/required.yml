@@ -7,10 +7,11 @@ on:
       - main
 
 jobs:
+
   myjob:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Run an one-line script
-        run: exit 1
+    - name: Run an one-line script
+      # uses: actions/checkout@v3
+      run: exit 1
