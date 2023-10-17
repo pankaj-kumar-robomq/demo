@@ -13,5 +13,4 @@ jobs:
 
     steps:
       - name: Run an one-line script
-        run: exit 0
-
+        run: exit 1
