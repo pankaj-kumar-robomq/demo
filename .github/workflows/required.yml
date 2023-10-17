@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run an one-line script
-      # uses: actions/checkout@v3
-      run: exit 1
+      - name: Run an one-line script
+        run: exit 0
+
